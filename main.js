@@ -202,8 +202,11 @@ mycharacter = start_game();
 if (mycharacter != null) {
 enemy = fight_menu(mycharacter);
 while (mycharacter.isDead == false) {
+console.log(`\nPlayer HP: ${mycharacter.currentHealth} / ${mycharacter.maxHealth}\n`);
+console.log(`Enemy HP: ${enemy.currentHealth} / ${enemy.maxHealth}\n`);
 console.log("\nAction Menu\n1.Attack\n");
 action_choice = prompt('');
+console.log('\n');
 if (action_choice == 1) {
 	mycharacter.attack(enemy);
 	if(enemy.isDead == false) {
@@ -215,7 +218,7 @@ if (action_choice == 1) {
 	}
 }
 else {
-	console.log(red + 'You fail.'+reset);
+	console.log(red + 'Invalid Input'+reset);
 }
 }
 }
